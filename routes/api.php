@@ -16,9 +16,15 @@ use App\Http\Controllers\BandController;
 |
 */
 
-Route::get('bands', [BandController::class, 'getAll']);
 
-Route::get('bands/{id}', [BandController::class, 'getById']);
+Route::apiResource('bands', BandController::class)->only(['index', 'show']);
+
+
+// Route::prefix('bands')->group(function () {
+//     Route::get('/', [BandController::class, 'getAll']);
+//     Route::get('/{id}', [BandController::class, 'getById']);
+// });
+
 
 // Route::get('hello/{name}', function ($name) {
 //     return "Hello" .$name;

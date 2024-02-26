@@ -7,16 +7,17 @@ use App\Models\Band;
 
 class BandController extends Controller
 {
-    public function getAll()
+    public function index()
     {
-        $bands = Band::all(); 
+        $bands = Band::all();
         return response()->json($bands);
     }
 
-    public function getById($id)
+   
+    public function show($id)
     {
         $band = Band::find($id);
-
         return response()->json($band);
     }
+    
 }
