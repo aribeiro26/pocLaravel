@@ -17,7 +17,8 @@ use App\Http\Controllers\BandController;
 */
 
 
-Route::apiResource('bands', BandController::class)->only(['index', 'show']);
+
+Route::apiResource('bands', BandController::class)->only(['index', 'show', 'store', 'update']);
 
 
 // Route::prefix('bands')->group(function () {
